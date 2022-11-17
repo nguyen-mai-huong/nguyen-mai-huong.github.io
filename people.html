@@ -1,0 +1,36 @@
+---
+layout: default
+title: People
+permalink: /people/
+---
+<div>
+  <h5>Staff</h5>
+  <ul>
+    {% assign principal_investigator = site.members | where: "position", "Principal Investigator" | first %}
+    <li>
+      <a href="{{ site.baseurl }}{{ principal_investigator.url }}">
+        <img src="{{ site.baseurl }}/assets/images/{{principal_investigator.short_name}}-profile.jpg" alt="{{ principal_investigator.name}} avatar" width="20%" height="10%" />
+      </a>
+      <p>{{ principal_investigator.name }}</a></p>
+      <p>{{ principal_investigator.position }}</p>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h5>Current Students</h5>
+  <h6>Graduate (GP/Ph.D./MSc)</h6>
+  <ul>
+    {% assign graduate_students = site.members | where: 'position', "Ph.D. Student" %}
+    {% for student in graduate_students %}
+      <li>
+        <a href="{{ site.baseurl }}{{ student.url }}">
+          <img src="{{ site.baseurl }}/assets/images/{{student.short_name}}-profile.jpg" alt="{{ student.name}} avatar" width="20%" height="10%" />
+        </a>
+        <p>{{ student.name }}</a></p>
+        <p>{{ student.position }}</p>
+        <p>{{ student.start_time }} - {{ student.topic }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
