@@ -1,0 +1,26 @@
+Min-Yen Kan:
+  name        : "Min-Yen Kan"
+  bio         : "Associate Professor"
+  avatar      : "/assets/images/min.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:kanmy@comp.nus.edu.sg"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://www.comp.nus.edu.sg/~kanmy/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/knmnyn/?ppe=1"
+
+Taha Aksu:
+  name        : "Taha Aksu"
+  bio         : "PhD candidate at National University of Singapore - School of Computing"
+  avatar      : "/assets/images/taha.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:taksu@u.nus.edu"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://cuthalionn.github.io/"

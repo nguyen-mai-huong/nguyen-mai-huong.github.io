@@ -43,6 +43,8 @@ $type-size-6: 0.75em !default; // ~12px
 $type-size-7: 0.6875em !default; // ~11px
 $type-size-8: 0.625em !default; // ~10px
 
+$type-size-9: 0.9375em !default; // ~15px
+
 /* headline scale */
 $h-size-1: 1.563em !default; // ~25.008px
 $h-size-2: 1.25em !default; // ~20px
@@ -149,7 +151,7 @@ $medium: 768px !default;
 $medium-wide: 900px !default;
 $large: 1024px !default;
 $x-large: 1280px !default;
-$max-width: $x-large !default;
+$max-width: 80vw !default;
 
 /*
    Grid

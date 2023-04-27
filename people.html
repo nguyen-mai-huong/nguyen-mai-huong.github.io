@@ -1,0 +1,60 @@
+---
+title: People
+layout: single
+permalink: /people/
+classes: wide
+---
+<div class="people">
+Looking to join WING? Learn how you can participate as an undergraduate, graduate, intern, collaborator or sponsor of our group. See the link in the right hand side of the menu. Due to the high number of intern applications we get, we regret to say that we can only consider interns who can come to WING for a minimum of six months, usually with self funding, or come from underrepresented countries (India and China do not count).
+  <div>
+    <h4>Staff</h4>
+    <div class="staff">
+      {% assign principal_investigator = site.members | where_exp: "member", "member.role == 'Principal Investigator'" | first %}
+      {% assign research_fellow = site.members | where_exp: "member", "member.role == 'Research Fellow'" | first %}
+      <div class="principal-investigator">
+        <a href="{{ principal_investigator.url }}">
+          <img src="{{ site.url }}{{ site.baseurl }}/assets/images/{{principal_investigator.short_name}}.jpg" alt="Principal Investigator">
+        </a>
+        <br>
+        <span><a href="{{ principal_investigator.url }}">{{ principal_investigator.name }}</a></span>  
+        <br>
+        <span>{{ principal_investigator.role }}</span>    
+      </div>
+      <div class="research-fellow">
+        <a href="{{ research_fellow.url }}">
+          <img src="{{ site.url }}{{ site.baseurl }}/assets/images/{{research_fellow.short_name}}.jpg" alt="Research Fellow">
+        </a>
+        <br>
+        <span><a href="{{ research_fellow.url }}">{{ research_fellow.name }}</a></span>     
+        <br>
+        <span>{{ research_fellow.role }}</span>    
+      </div>
+  </div>
+  <div>
+    <h4>Current Students</h4>
+    <div class="current-student">
+      {% assign graduate_students = site.members | where_exp: "member", "member.role == 'Ph.D. Student' or member.role == 'MComp Student'" %}
+
+      <h3>Graduate (GP/Ph.D./MSc)</h3>
+      <ul class="graduate-students">
+        {% for graduate_student in graduate_students%}
+          <li class="graduate-student">
+            <a href="{{ graduate_student.url }}"> 
+              <img src="{{ site.url }}{{ site.baseurl }}/assets/images/{{graduate_student.short_name}}.jpg" alt="Graduate Student">
+            </a>
+            <br>
+            <span><a href="{{ graduate_student.url }}">{{ graduate_student.name }}</a></span>  
+            <br>
+            <span>{{ graduate_student.role }}</span>  
+            <br>
+            <span><small>{{ graduate_student.cohort}} Topics in {{ graduate_student.research_topic }}</small></span>        
+          </li>
+        {% endfor %}
+      </ul>
+      <h3>Undergraduate (FYP/HYP/UROP/Interns)</h3>
+      
+ 
+    </div>
+  </div>
+
+</div>

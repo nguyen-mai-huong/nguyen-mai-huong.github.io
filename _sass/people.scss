@@ -1,0 +1,53 @@
+.people {
+  div.staff {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+
+    .principal-investigator, .research-fellow {
+      img {
+        height: auto;
+        padding: 0.5rem;
+        margin: auto;
+        border-radius: 20%;
+      }
+      span {
+        padding: 0.5rem;
+        text-align: center;
+        font-size: 0.9375em;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
+  ul.graduate-students {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+    list-style: none;
+
+    li.graduate-student {
+      img {
+        height: auto;
+        padding: 0.5rem;
+        margin: auto;
+        border-radius: 20%;
+      }
+
+      span {
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+
+}
