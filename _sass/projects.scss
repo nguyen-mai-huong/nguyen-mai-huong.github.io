@@ -1,0 +1,19 @@
+.projects {
+  section {
+    div.project {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+
+      div.project-photo {
+        width: 25%;
+        margin: 0.5em 1em 0 0.5em;
+        vertical-align: middle;
+      }
+
+      div.project-description {
+        width: 75%;
+      }
+    }
+  }
+}

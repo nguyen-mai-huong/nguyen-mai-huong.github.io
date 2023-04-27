@@ -1,0 +1,51 @@
+---
+title: Projects
+layout: archive
+permalink: /projects/
+---
+<div class="projects">
+  <ul class="taxonomy__index">
+    {% assign projectsInYear = site.projects | where_exp: "item", "item.hidden != true" | group_by_exp: 'project', 'project.date | date: "%Y"' %}
+    {% for year in projectsInYear %}
+      <li>
+        <a href="#{{ year.name }}">
+          <strong>{{ year.name }}</strong> <span class="taxonomy__count">{{ year.items | size }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% assign entries_layout = page.entries_layout | default: 'list' %}
+  {% assign projectsByYear = site.projects | where_exp: "item", "item.hidden != true" | group_by_exp: 'project', 'project.date | date: "%Y"' | sort: 'project.date | date: "%Y"' | reverse %}
+  {% for year in projectsByYear %}
+    <div class="project-{{ year.name }}">
+      <h2 id="{{ year.name }}" class="archive__subtitle">{{ year.name }}</h2>
+      <div class="entries-{{ entries_layout }}">
+        {% for project in year.items %}
+          <section id="{{ year.name }}-{{ project.url }}" class="taxonomy__section">
+            <div class="archive__item project">
+              {% if project.photo %}
+                <div class="archive__item-teaser project-photo">
+                  <img src="{{ project.photo }}" alt="Project Photo">
+                </div>
+              {% endif %} 
+              <div class="project-description">
+                <h2 class="archive__item-title no_toc" itemprop="headline">
+                  {% if project.link %}
+                    <a href="{{ project.link }}">{{ title }}</a> <a href="{{ project.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+                  {% else %}
+                    <a href="{{ project.url | relative_url }}" rel="permalink">{{ project.title }}</a>
+                  {% endif %}
+                </h2>
+
+                {% if project.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ project.excerpt | markdownify | strip_html | truncate: 500 }}</p>{% endif %}
+              </div>
+            </div>     
+          </section> 
+        {% endfor %}
+        <!-- <a href="#page-title" class="back-to-top">{{ site.data.ui-text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a> -->
+      </div>
+
+    </div>
+  {% endfor %}
+</div>
